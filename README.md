@@ -2,6 +2,14 @@
 
 A responsive React web app that fetches and displays popular courses from an API. Users can browse by category and "like" courses they find interesting — a great UI practice project using modern React concepts.
 
+## 📸 Screenshots
+
+### 💻 Home Page
+![Home Page](./src/images/SS1.png)
+
+### 📂 Filtered Category
+![Filtered Courses](./src/images/SS2.png)
+
 ## ✨ Features
 
 - ✅ Fetches course data from an external API
@@ -36,7 +44,7 @@ A responsive React web app that fetches and displays popular courses from an API
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/top-courses-app.git
+git clone https://github.com/abhimittal1/Top-Courses-Project.git
 cd top-courses-app
 ```
 
@@ -55,15 +63,6 @@ npm start
 - `react-toastify`: For toast notifications
 - `react-icons`: For like icons
 - `tailwindcss`: For styling
-
-## 📸 Screenshots
-
-### 💻 Home Page
-![Home Page](./src/images/SS1.png)
-
-### 📂 Filtered Category
-![Filtered Courses](./src/images/SS2.png)
-
 
 
 ## 🙌 Acknowledgements
