@@ -1,0 +1,128 @@
+In this class we will learn about the useEffect Hook in the React....
+
+                            REACT useEFFECT HOOK  -- (this is used when we want to perfome the task after rendering the element)
+
+side effect ==== task other then the normal flow of the website....
+
+useEffect is used to handle the side effects in website..
+side effect == "call the API" or "updating the DOM by Clicking on the button" or "modify the browers history..
+
+*** Any change other then the render element is the side effect ********************
+eg: - dragging the window make the window size change that change is the side effect..
+
+
+flow :- useEffect will run after the components is rendered
+1. variation one : (one every rendering)
+
+    useEffect (()=>{
+        console.log("UI rendering is done);
+    })
+
+2. variation two : (only on the first render)
+
+    useEffect(()=>{
+    console.log("this will print only one time (FIRST TIME)")
+  },[]);
+
+    by passing the empty string as the second parameter: 
+
+3. variation 3rd : (on first render + whenever dependency changes)
+
+    useEffect(()=>{
+    console.log("this will print only one time (FIRST TIME)")
+  },[Text,name]);
+
+    this will work when we change the text value + FIRST render
+    (or the list in the 2nd array)
+
+4. variation 4th : ( This is used when we want to remove the listener before adding the new one)
+
+    useEffect(() => {
+    console.log("add the listener");
+
+    return () => {
+      console.log("remove the listener");
+    }
+   }, [text]);
+
+   first remove wale line work then add wale line will work..
+
+
+
+            *******  CLASS BASED components  --- useEffect is the replacement of this old pattern coding
+            ---> Life cycle methods .....
+
+************* code to see the window size change ************
+
+
+import { useState, useEffect } from "react";
+import React from "react";
+
+const App = () => {
+  // Function to get initial window dimensions
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return { width, height };
+  }
+
+  // State to hold window dimensions
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  // Effect to update window dimensions on resize
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); // Empty dependency array ensures effect runs only on mount and unmount
+
+  // Destructure width and height from windowDimensions state
+  const { width, height } = windowDimensions;
+
+  return (
+    <div>
+      <p>Width: {width}px</p>
+      <p>Height: {height}px</p>
+    </div>
+  );
+};
+
+export default App;
+
+*****************************************************************************************************************
+
+NOW working on the project :----
+0. import the toast and its css in the index.js file .....
+1. as we can see the only three components  -- navbar , filter , and the cards so make the components in the app.js..
+2. UI ready kar lo : - add the three components in the App.js file ... then work on each seperatly...
+3.   for the navbar--> we have only the Heading simple
+
+4. for the filter --> we have the 5 buttons so we can add then like 5 button tag or --- MAP function ()..
+
+          for the map function we need the data to travel on.. import it in the App.js file then by the help of the props take it to the filter component .... 
+
+5. for the cards --> we have the multiply card here .. MAP function for the data in the card by the API call..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
